@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Form</title>
+</head>
+<body>
+
+<div>
+
+    <h1>Στοιχεία Εκπαιδευομένου</h1>
+
+    <form>
+
+        <label for="lastname">Επώνυμο</label>
+        <input type="text" id="lastname"><br>
+
+        <label for="firstname">Όνομα</label>
+        <input type="text" id="firstname"><br>
+
+        <label>Φύλο</label>
+        <input type="radio" id="male" name="gender" checked><label for="male">Άνδρας</label>
+        <input type="radio" id="female" name="gender"><label for="female">Γυναίκα</label><br>
+
+        <label for="levelOfStudies">Επίπεδο Σπουδών</label>
+        <select name="levelOfStudies" id="levelOfStudies">
+            <option value="BSc">BSc</option>
+            <option value="MSc">MSc</option>
+            <option value="PhD">PhD</option>
+        </select><br>
+
+        <label for="comments">Σχόλια</label>
+        <textarea id="comments" cols="30"  rows="10"></textarea><br><br>
+
+        <button type="submit">Αποστολή Στοιχείων</button>
+    </form>
+
+    <button type="button" onclick="console.log('Hello World')">Check Submission</button>
+
+</div>
+    
+</body>
+</html>

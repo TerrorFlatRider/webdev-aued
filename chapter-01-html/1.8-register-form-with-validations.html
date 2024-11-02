@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+</head>
+<body>
+    <h1>Εγγραφή Εκπαιδευομένου</h1>
+    
+    <form>
+        <table>
+                <tr>
+                    <td><label for="lastname">Επώνυμο</label></td>
+                    <td><input type="text" id="lastname" required maxlength="50" pattern="[a-zA-ZΑ-Ζ]+"></td>
+                </tr>
+                <tr>
+                    <td><label for="firstname">Όνομα</label></td>
+                    <td><input type="text" id="firstname" required maxlength="50" pattern="[a-zA-ZΑ-Ζ]+"></td>
+                </tr>
+            <tr>
+                <td><label for="birthdate">Ημερομηνία Γέννησης</label></td>
+                <td><input type="date" id="birthdate" maxlength="10" max="2006-01-31"></td>
+            </tr>
+            <tr>
+                <td><label for="yearOfStudies"></label>Έτος Σπουδών</td>
+                <td><input type="number" id="yearOfStudies" min="1" max="6"></td>
+            </tr>
+            <tr>
+                <td><label for="login">Login (Email)</label></td>
+                <td><input type="email" id="login" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td><input type="password" id="password" required minlength="8"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Ολοκλήρωση Εγγραφής</button></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

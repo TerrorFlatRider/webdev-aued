@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+</head>
+<body>
+    <div>
+        <h1>Φόρμα Πληρωμής</h1>
+        <p>Τα υποχρεωτικά πεδία ακολουθούνται από <abbr title="Required Field">*</abbr></p>
+
+        <div>
+            <form>
+               
+                <table>
+                    <tr>
+                        <td><h2>Προσωπικά Στοιχεία</h2></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <fieldset>
+                                <Legend>Title</Legend>
+                                <input type="radio" name="title" id="mr" checked><label for="mr">Mr.</label><br>
+                                <input type="radio" name="title" id="mrs"><label for="mrs">Mrs.</label><br>
+                                <input type="radio" name="title" id="dr"><label for="dr">Dr.</label><br>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="fullname">Name: <abbr title="Required Field">*</abbr></label></td>
+                        <td><input type="text" id="fullname" required pattern="[ A-Z]+"></td>
+                    </tr> 
+                    <tr>
+                        <td><label for="email">Email: <abbr title="Required Field">*</abbr></label></td>
+                        <td><input type="email" id="email" required></td>
+                    </tr> 
+                    <tr>
+                        <td><label for="password">Password: <abbr title="Required Field">*</abbr></label></td>
+                        <td><input type="password" id="password" required minlength="8"></td>
+                    </tr> 
+                    <tr>
+                        <td><h2>Πληροφορίες Πληρωμής</h2></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cardtype">Card type:</label></td>
+                        <td>   
+                            <select name="" id="">
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">Mastercard</option>
+                            </select>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td><label for="cardnumber">Card number: <abbr title="Required Field">*</abbr></label></td>
+                        <td><input type="text" id="cardnumber" required minlength="16" pattern="[0-9]+"></td>
+                    </tr> 
+                    <tr>
+                        <td><label for="expdate">Expiration date: <abbr title="Required Field">*</abbr></label></td>
+                        <td><input type="month" id="expdate" required min="2025-01"></td>
+                    </tr> 
+                    <tr> 
+                        <td></td>
+                        <td><button type="submit">Προχωρήστε στην πληρωμή.</button></td>
+                    </tr> 
+                </table> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>

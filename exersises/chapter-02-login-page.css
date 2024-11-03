@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.login-main-section{
+    background-color: #7f7ff8;
+    padding: 10px 30px 10px 30px;  /*top right bottom left*/
+   
+}
+
+.login-main-form{
+    background-color: rgb(240, 240, 240);
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.login-main-form > h1{
+    text-align: center;
+    color: rgb(117, 117, 117);
+    font-family: "Outfit", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#tb-mail, #tb-password{
+    background-color: rgb(231, 219, 229);
+    color: rgb(117, 117, 117);
+    margin: 6px 0% 6px 0%; /*top right bottom left*/
+    border: 0px;
+    border-radius: 4px;
+    height: 2rem;
+    width: 100%;
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+}
+
+#tb-mail::placeholder, #tb-password::placeholder{
+    padding-left: 10px;
+}
+
+#btn-sign-in{
+    background-color: #7f7ff8;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+}
+
+.password-recovery-section p{
+    text-align: center;
+}
+
+.password-recovery-section a{
+    color: rgb(117, 117, 117);
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.password-recovery-section a:hover{
+    color: rgb(241, 140, 140);
+}
+
+.sign-up-section p{
+    text-align: center;
+    color: white;
+    font-family: serif;
+    font-weight: 400;
+}
+
+.sign-up-section a{
+    color: white;
+    font-family: serif;
+    font-weight: 400;
+}
+
+.sign-up-section a:hover{
+    color: rgb(255, 189, 252);
+}

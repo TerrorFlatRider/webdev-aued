@@ -1,0 +1,48 @@
+body{
+    padding: 2px;
+}
+
+#form-section{
+    margin: auto;
+    max-width: 400px;
+    min-width: 400px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: white;
+    border-color: #777777;
+    padding: 10px;
+}
+
+table{
+    width: 400px;
+}
+
+abbr{
+    color: red;
+    font-weight: bold;
+}
+
+form h2{
+    text-align: left;
+}
+
+fieldset{
+   width:180px;
+}
+
+#fullname, #email,#password,#cardnumber,#expdate{
+    width: 200px;
+}
+
+
+.frm-label{
+    text-align: right;
+}
+
+.frm-button{
+    text-align: center;
+}
+
+#btn-complete-payment{
+    margin: 20px;
+}

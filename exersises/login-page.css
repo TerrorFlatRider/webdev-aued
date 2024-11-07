@@ -7,79 +7,103 @@
 }
 
 .container-fluid{
-    background-color: #7f7ff8;
+    background-color: cornflowerblue;
+    width: 100%;
+    margin: 10px auto;
     padding: 10px 30px 10px 30px;  /*top right bottom left*/
 }
 
 .container{
-    background-color: rgb(240, 240, 240);
-    margin: auto;
+    background-color: white;
+    width: 80%;
+    max-width: 360px;
+    margin: 0 auto;
     padding: 10px;
-    border-radius: 10px;
-    max-width: 300px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.row{
+    padding-top: 15px;
 }
 
 .container h1{
-    text-align: center;
-    color: rgb(117, 117, 117);
+    color: #8c8d8d;
     font-family: "Outfit", sans-serif;
     font-size: 2.5rem;
     font-weight: 500;
 }
 
 #tb-mail, #tb-password{
-    background-color: rgb(231, 219, 229);
+    width: 90%;
+    height: 40px;
+    background-color: #faf4f4;
     color: rgb(117, 117, 117);
     margin: 6px 0% 6px 0%; /*top right bottom left*/
-    border: 0px;
-    border-radius: 4px;
-    height: 2rem;
-    width: 100%;
+    border-width: 0px;
+    border-radius: 5px;
     font-family: "Outfit", sans-serif;
     font-weight: 400;
 }
 
 #tb-mail::placeholder, #tb-password::placeholder{
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
-#btn-sign-in{
-    background-color: #7f7ff8;
+#submit-btn{
+    width: 90%;
+    height: 40px;
+    background-color: cornflowerblue;
     color: white;
-    border: 0px;
-    border-radius: 4px;
-    width: 100%;
+    border-width: 0px;
+    border-radius: 5px;
     padding: 12px;
     margin-top: 6px;
 }
 
-.password-recovery-section{
-    text-align: center;
-}
-
-.password-recovery-section a{
+#password-recovery-section a{
     color: rgb(117, 117, 117);
     font-family: sans-serif;
     font-weight: 500;
 }
 
-.password-recovery-section a:hover{
+#password-recovery-section a:hover{
     color: rgb(241, 140, 140);
 }
 
-.sign-up-section p{
+#sign-up-section p{
     text-align: center;
     color: white;
     font-family: serif;
     font-weight: 400;
 }
 
-.sign-up-section a{
+#sign-up-section a{
     color: white;
     font-family: serif;
     font-weight: 400;
 }
 
-.sign-up-section a:hover{
+#sign-up-section a:hover{
     color: rgb(255, 189, 252);
 }
+
+.pb-50{
+    padding-bottom: 50px;
+}
+
+.pb-20{
+    padding-bottom: 20px;
+}
+
+/*Validation Rules*/
+
+#tb-mail:valid + span::before, 
+#tb-password:valid + span::before {
+    content: "\2713";
+    color: green;
+    font-size: 20px;
+}
+
+
+

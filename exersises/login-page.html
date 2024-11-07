@@ -4,27 +4,37 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="chapter-02-exercise-01-login-page.css">
+    <link rel="stylesheet" href="login-page.css">
     <title>Login Page</title>
 </head>
+
 <body>
-    <div class="login-main-section">
-        <div class="login-main-form">
-            <h1>Login</h1>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <h1>Login</h1>
+            </div>
             <form>
-                <input type="email" id="tb-mail" placeholder="E-Mail" required>
-                <input type="password" id="tb-password" placeholder="Password" minlength="8" required><br>
-                <button type="submit" id="btn-sign-in">Sign In</button>
+                <div class="row">
+                    <input type="email" id="tb-mail" placeholder="E-Mail" required>
+                </div>
+                <div class="row">
+                    <input type="password" id="tb-password" placeholder="Password" minlength="8" required><br>
+                </div>
+                <div class="row">
+                    <button type="submit" id="btn-sign-in">Sign In</button>
+                </div>
             </form>
-            <div class="password-recovery-section">
-                <p><a href="#blank">Lost your password?</a></p>
+            <div class="row password-recovery-section">
+                <a href="">Lost your password?</a>
             </div>
         </div>
-        <div class="sign-up-section">
-            <p>Dont have an account? <a href="#blank">Sign up here!</a></p>
+        <div class="row sign-up-section ">
+            <p>Don't have an account? <a href="">Sign up here!</a></p>
         </div>
     </div>
 </body>

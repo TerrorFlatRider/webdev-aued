@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto; /* 0 = up & down | auto = left & right*/
+}
+
+.header{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #363636;
+}
+
+.logo{
+    width: 45%;
+    float: left;
+}
+
+.menu{
+    width: 55%;
+    float: right;
+}
+
+.slider{
+    width: 100%;
+    background-image: url("../img/art2.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-title{
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 200px;
+    padding-bottom: 60px;
+}
+
+.slider-subtitle{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.main{
+    width: 100;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+.main-title{
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+.main-title{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer{
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 20px;
+    overflow: hidden;
+}
+
+.copyright{
+    width: 40%;
+    float: left;
+}
+
+.social{
+    width: 60%;
+    float: right;
+}

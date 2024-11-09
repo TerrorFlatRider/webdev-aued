@@ -105,5 +105,12 @@
     font-size: 20px;
 }
 
+#tb-mail:valid, #tb-password:valid{
+    border: 1px solid green;
+}
 
-
+/*
+#tb-mail:invalid, #tb-password:invalid{
+    border: 1px solid red;
+}
+*/

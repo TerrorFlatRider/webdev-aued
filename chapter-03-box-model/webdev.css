@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quicksand:wght@300..700&family=Roboto+Slab:wght@100..900&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -12,19 +15,43 @@
 .header{
     width: 100%;
     margin: 0 auto;
-    overflow: hidden;
     background-color: #363636;
+
+    display: flex;
+    align-items: center;
 }
 
 .logo{
     width: 45%;
-    float: left;
 }
+
+.logo > img{
+    width: 100%;
+}
+
+/*Menu*/
 
 .menu{
     width: 55%;
-    float: right;
+} 
+
+.menu >ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
+
+.menu li{
+    display: inline-block;
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/*Slider*/
 
 .slider{
     width: 100%;
@@ -46,6 +73,21 @@
     margin: 0 auto;
 }
 
+.slider-title > p {
+    text-align: center;
+    font-family: 'Roboto Slab',serif;
+    font-size: 35px;
+    color: white;
+}
+
+.slider-subtitle > p {
+    text-align: center;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 25px;
+    color: rgb(243,237,237);
+    padding-bottom: 25px;
+}
+ /*Main*/
 .main{
     width: 100;
     margin: 0 auto;
@@ -58,24 +100,55 @@
     padding-bottom: 25px;
 }
 
-.main-title{
+.main-title > h1{
+    font-family: 'Roboto Slab',serif;
+}
+
+.main-text{
     width: 100%;
     margin: 0 auto;
 }
+
+.main-text p {
+    font-family: 'Quicksand',sans-serif;
+    line-height: 25px;
+}
+
+/*Footer*/
 
 .footer{
     width: 100%;
     margin: 0 auto;
     padding: 30px 20px;
-    overflow: hidden;
+    background-color: #363636;
+    display: flex;
+    align-items: center;
 }
 
 .copyright{
-    width: 40%;
+    width: 85%;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 0.8rem;
+    color:white;
     float: left;
 }
 
 .social{
     width: 60%;
     float: right;
+    display: flex;
+    align-items: center;
+}
+
+.social > p{
+    margin-right: 10px;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.social .fab{
+     font-size: 30px;
+     color: #e4e4e4;
+     padding: 4px;
 }

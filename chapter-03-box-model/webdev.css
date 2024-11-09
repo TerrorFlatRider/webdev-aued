@@ -7,8 +7,13 @@
     padding: 0;
 }
 
+body, html{
+    height: 100%;
+}
+
 .container{
     width: 100%;
+    height: 100%;
     margin: 0 auto; /* 0 = up & down | auto = left & right*/
 }
 
@@ -19,6 +24,10 @@
 
     display: flex;
     align-items: center;
+
+    /*Sticky Header*/
+    position: fixed;
+    top: 0;
 }
 
 .logo{
@@ -27,6 +36,7 @@
 
 .logo > img{
     width: 100%;
+    margin: 4px;
 }
 
 /*Menu*/
@@ -55,16 +65,20 @@
 
 .slider{
     width: 100%;
+    height: 100%;
     background-image: url("../img/art2.png") ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    /*Parallax Effect*/
+    background-attachment: fixed;
 }
 
 .slider-title{
     width: 70%;
     margin: 0 auto;
-    padding-top: 200px;
+    padding-top: 150px;
     padding-bottom: 60px;
 }
 

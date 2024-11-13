@@ -1,0 +1,53 @@
+/* body{
+    background-color: lawngreen;
+}
+
+@media only screen and (max-width:992px) {
+    body{
+        background-color: lightcoral;
+    }
+}
+
+@media all and (max-width:576px) {
+    body{
+        background-color: lightskyblue;
+    }
+} */
+
+*{
+    box-sizing: border-box;
+
+}
+
+[class^=side]{
+    width: 33%;
+    float: left;
+    border: 2px solid red;
+    height: 100px;
+}
+
+@media only screen and (max-width: 768px){
+    [class^=side]{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:576px) and (max-width: 768px){
+    .side1,.side2 {
+        width: 50%;
+    }
+
+    .side3 {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .side1,.side2 {
+        width: 100%;
+    }
+
+    .side3 {
+        width: 100%;
+    }
+}

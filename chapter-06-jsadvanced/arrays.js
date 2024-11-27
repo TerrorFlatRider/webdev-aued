@@ -32,7 +32,7 @@ let deletedProduct = products.splice(1,1);
 alert(products.join()); //orange,egg,honey
 
 //Search
-let orangePosition = products.lastIndexOf('orange');
+let orangePosition = products.IndexOf('orange');
 alert(orangePosition);
 
 //Update

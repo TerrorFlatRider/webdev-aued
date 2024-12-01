@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <script>
+        let add = (a,b) => a + b;
+
+        /*function add (a,b){
+            a + b;
+        } */
+
+        add(3,5);
+
+        function sayHello(say){
+            say();
+        }
+
+        sayHello( () => alert('Hello!') );
+
+    </script>
+</body>
+</html>

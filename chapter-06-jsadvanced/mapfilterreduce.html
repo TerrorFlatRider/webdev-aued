@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let quarterSales = [1800,2500,3000,4000];
+
+        //Map Array Function
+
+        let netProfits = quarterSales.map( function (value){
+            return value * 0.7;
+        });
+
+        document.write('Quarter Sales <br>');
+        document.write(quarterSales.join(','));
+
+        document.write('<br> Net Profit 70%<br>');
+        document.write(netProfits.join(','));
+
+        //Filter Array Function
+
+        let netProfitsGreaterThan2000 = netProfits.filter( (profits) => profits > 2000 );
+        document.write('<br>');
+        document.write(netProfitsGreaterThan2000.join(','));
+
+        //Reduce Array Function
+        
+        let sumOfNetProfits = netProfits.reduce( function(total, value){
+            return total + value;
+        }, 0 );
+
+        document.write('<br>');
+        document.write(sumOfNetProfits);
+         
+
+    </script>
+</body>
+</html>

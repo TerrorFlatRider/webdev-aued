@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call by value vs Call by reference</title>
+</head>
+<body>
+    <!--Call by Value-->
+    <script>
+        function swap(a,b){
+            let temp = a;
+            a = b;
+            b = temp;
+        }
+
+        let a=10;
+        let b=5;
+
+        document.write(`a = ${a} , b = ${b} <br>`);
+
+        swap(a,b);
+
+        document.write(`a = ${a} , b = ${b} <br>`);
+    </script>
+
+    <!--Call by Reference-->
+    <script>
+        function swap(arr){
+            let temp = arr[0];
+            arr[0] = arr[1];
+            arr[1] = temp;
+        }
+
+        let arr = [1, 5];
+
+        document.write(`arr[0] = ${arr[0]}, arr[1] = ${arr[1]} , <br>`);
+
+        swap(arr);
+
+        document.write(`arr[0] = ${arr[0]}, arr[1] = ${arr[1]} , <br>`);
+    </script>
+</body>
+</html>

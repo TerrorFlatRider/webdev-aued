@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods</title>
+</head>
+<body>
+
+    <script>
+        let person = {
+            firstname: 'Thanasis',
+            lastname: 'Goulas',
+            //Override toString of Object
+            toString: function(){
+                return this.firstname + ' ' + this.lastname;
+            },
+            printState: function(){
+                document.write('First Name: ');
+                document.write(this.firstname);
+                document.write('<br>');
+                document.write('Last Name: ');
+                document.write(this.lastname);
+            }          
+        }
+
+        person.printState();
+
+        document.write(person);
+
+    </script>
+    
+</body>
+</html>

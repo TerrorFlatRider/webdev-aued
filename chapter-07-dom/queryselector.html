@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">Hello</div>
+
+    <form action="">
+        Firstname:
+        <input type="text">
+        Lastname:
+        <input type="text">
+        <button type="button" onclick="showValues()">show values</button>
+    </form>
+    <script>
+        let container = document.querySelector('.container');
+        let textboxes = document.querySelectorAll('input[type="text"]');
+
+        for(let i =0; i < textboxes.length; i++){
+            textboxes[i].style.background = 'red';
+        }
+
+        function showValues(){
+            let output = '';
+
+            for(let i =0; i < textboxes.length; i++){
+                output += textboxes[i].value + ' ';
+            }
+
+            alert(output);
+        }
+    </script>
+</body>
+</html>

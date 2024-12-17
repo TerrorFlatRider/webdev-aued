@@ -6,9 +6,15 @@ $(document).ready(function(){
 })
 
 function hideAllDescriptions(){
-    $('.java-text').hide();
+    let imageTexts = $('div[class*="text"]');
+
+    imageTexts.each(function(){
+        $(this).hide();
+    })
+
+    /*$('.java-text').hide();
     $('.js-text').hide();
-    $('.csharp-text').hide();
+    $('.csharp-text').hide();*/
 }
 
 function showImgText(imgId,textDiv){

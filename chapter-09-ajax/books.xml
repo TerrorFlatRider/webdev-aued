@@ -1,0 +1,18 @@
+<library>
+    <book>
+            <title>Java Fundamentals</title>
+            <author>A. Androutsos</author>
+    </book>
+     <book>
+            <title>The Art of Programming</title>
+            <author>D. Knuth</author>
+    </book>
+     <book>
+            <title>Computer Networks</title>
+            <author>A. Tanenbaum</author>
+    </book>
+     <book>
+            <title>The Best Programmer</title>
+            <author>Thanasis Goulas</author>
+    </book>
+</library>

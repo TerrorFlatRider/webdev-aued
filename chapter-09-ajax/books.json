@@ -1,0 +1,26 @@
+{
+  "library":{
+    "book": [
+            {
+             "title": "Java Fundamentals",
+             "author": "A. Androutsos"
+            },
+            {
+             "title": "The Art of Programming",
+             "author": "D. Knuth"
+            },
+            {
+             "title": "Computer Networks",
+             "author": "A. Tanenbaum"
+            },
+            {
+             "title": "The Best Programmer",
+             "author": "Thanasis Goulas"
+            },
+            {
+              "title": "The Best JS Dev",
+              "author": "Thanasis Drivas"
+            }
+    ]
+  }
+}

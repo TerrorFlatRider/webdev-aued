@@ -1,4 +1,58 @@
-const omdbAPIKey = "36562f82";
+//OMDB Api Key
+const omdbAPIKey = "36562f82"; 
+
+//Constructor function of menu object
+function Menu(idName,className,menuType){
+    this.id = idName;
+    this.class = className;
+
+    if(menuType === null){
+        this.type = 'div';
+    }else{
+        this.type = menuType;
+    }
+    
+    this.menuItems = [];
+    this.getMenuHTMLElement = function(){
+
+        let mainMenu = document.createElement(this.type);
+        mainMenu.setAttribute('class', this.class);
+
+        let ulMainMenu = document.createElement('ul');
+
+        if(this.menuItems.length >= 1){
+            for(let i =0; i < this.menuItems.length;i++){
+                ulMainMenu.appendChild(this.menuItems[i].getMenuItemHTMLElement());
+            }
+        }
+
+        mainMenu.appendChild(ulMainMenu);
+
+        return mainMenu;
+    }
+}
+
+//Constructor function of menu item object
+function MenuItem (id,title,url) {
+    this.id = id;
+    this.title = title;
+    this.url = url;
+    this.subMenu = null;
+    this.getMenuItemHTMLElement = function (){
+
+        let liMainMenuItem = document.createElement('li');
+        let aMainMenuItem = document.createElement('a');
+        aMainMenuItem.setAttribute('href',this.url);
+        aMainMenuItem.innerHTML= this.title;
+        liMainMenuItem.appendChild(aMainMenuItem);
+
+        if(this.subMenu != null){
+            liMainMenuItem.appendChild(this.subMenu.getMenuHTMLElement());
+        }
+
+        return liMainMenuItem;
+    }
+}
 
 $(document).ready( function(){
 
@@ -36,9 +90,9 @@ function loadHeader(){
     let header = document.getElementById('header');
 
     header.appendChild(loadLogo());
-    header.appendChild(loadMenu('main-menu'));
+    header.appendChild(loadMenu('main-menu','sub-menu'));
     header.appendChild(loadMenuIcons());
-    container.appendChild(loadMenu('menu-mobile'));
+    container.appendChild(loadMenu('menu-mobile','sub-menu-mobile'));
 }
 
 function loadLogo(){
@@ -58,9 +112,35 @@ function loadLogo(){
     </div>*/
 }
 
-function loadMenu(menuClass){
+function loadMenu(menuClass,subMenuClass){
 
-    let mainMenu = document.createElement('div');
+    const mainMenu = new Menu(menuClass,menuClass);
+    const menuLink1 = new MenuItem('home','Home','index.html');
+    const menuLink2 = new MenuItem('about','About','about.html');
+    const menuLink3 = new MenuItem('projects','Projects','projects.html');
+    const menuLink4 = new MenuItem('portfolio','Portfolio','portfolio.html');
+    const menuLink5 = new MenuItem('downloads','Downloads','downloads.html');
+    const menuLink6 = new MenuItem('contact','Contact','contact.html');
+
+    const subMenu1 = new Menu(subMenuClass,subMenuClass,'ul');
+    const subMenuLink1 = new MenuItem('mixplorer','MiXplorer','');
+    const subMenuLink2 = new MenuItem('musicbee','Musicbee','');
+    const subMenuLink3 = new MenuItem('icons','Icons','');
+    subMenu1.menuItems.push(subMenuLink1,subMenuLink2,subMenuLink3);
+    menuLink5.subMenu = subMenu1;
+
+
+    mainMenu.menuItems.push(menuLink1,menuLink2,menuLink3,menuLink4,menuLink5,menuLink6);
+
+    console.log(mainMenu);
+    console.log(mainMenu.getMenuHTMLElement());
+
+    return mainMenu.getMenuHTMLElement();
+}
+
+/*function loadMenu(menuClass){
+
+    /*let mainMenu = document.createElement('div');
     mainMenu.setAttribute('class', menuClass);
 
     let ulMainMenu = document.createElement('ul');
@@ -68,33 +148,14 @@ function loadMenu(menuClass){
     ulMainMenu.appendChild(newMenuListItem('index.html','Home'));
     ulMainMenu.appendChild(newMenuListItem('about.html','About'));
     ulMainMenu.appendChild(newMenuListItem('projects.html','Projects'));
-    ulMainMenu.appendChild(newMenuListItem('portofolio.html','Portofolio'));
+    ulMainMenu.appendChild(newMenuListItem('portfolio.html','Portfolio'));
     ulMainMenu.appendChild(newMenuListItem('downloads.html','Downloads'));
     ulMainMenu.appendChild(newMenuListItem('contact.html','Contact'));
 
     mainMenu.appendChild(ulMainMenu);
 
     return mainMenu;
-
-    /*<div class="main-menu">
-       <ul>
-           <li><a href="index.html">Home</a></li>
-           <li><a href="about.html">About</a></li>
-           <li><a href="projects.html">Projects</a>
-               <ul class="sub-menu">
-                   <li><a href="portofolio.html">Portfolio</a></li>
-                   <li><a href="artwork.html">Artwork</a></li>
-               </ul> 
-           <li><a href="downloads.html">Downloads</a>
-               <ul class="sub-menu">
-                   <li><a href="">MiXplorer</a></li>
-                   <li><a href="">Musicbee</a></li>
-                   <li><a href="">Icons</a></li>
-               </ul></li>
-           <li><a href="contact.html">Contact</a></li>
-       </ul>
-    </div>*/
-}
+}*/
 
 function loadMenuIcons(){
 
@@ -233,22 +294,28 @@ function newMenuListItem (link,text){
 
 function loadPosters(){
 
-    let postersSection = document.getElementById('posters-section');
+    try{
 
-    postersSection.appendChild(createElementWContent('h2',"Creative Graphic Designing of Posters"));
-    postersSection.appendChild(createElementWContent('p',"Fictional posters of my favorite movies to demonstrate XHRs with OMDB Api"));
+        let postersSection = document.getElementById('posters-section');
 
-    let postersDiv = document.createElement('div');
-    postersDiv.setAttribute('id','posters-sub-section')
-    postersDiv.setAttribute('class','posters-sub-section')
+        postersSection.appendChild(createElementWContent('h2',"Creative Graphic Designing of Posters"));
+        postersSection.appendChild(createElementWContent('p',"Fictional posters of my favorite movies to demonstrate XHRs with OMDB Api"));
 
-    postersSection.appendChild(postersDiv);
+        let postersDiv = document.createElement('div');
+        postersDiv.setAttribute('id','posters-sub-section')
+        postersDiv.setAttribute('class','posters-sub-section')
 
-    fetchFromOmdbApi("wicked");
-    fetchFromOmdbApi("a star is born");
-    fetchFromOmdbApi("black hawk down");
-    fetchFromOmdbApi("la la land");
-    fetchFromOmdbApi("dune");
+        postersSection.appendChild(postersDiv);
+
+        fetchFromOmdbApi("wicked");
+        fetchFromOmdbApi("a star is born");
+        fetchFromOmdbApi("black hawk down");
+        fetchFromOmdbApi("la la land");
+        fetchFromOmdbApi("dune");
+
+    }catch (e){
+        console.log(e);
+    }
 }
 
 function fetchFromOmdbApi(movieTitle){

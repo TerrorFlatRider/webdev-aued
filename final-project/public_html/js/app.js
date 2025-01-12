@@ -1,6 +1,7 @@
 //Author: Athanasios Goulas
 //Project: Final Assignment
 //Course: AUEB Web Developer
+//GitHub Link: https://github.com/TerrorFlatRider/webdev-aued/tree/main/final-project
 
 //OMDB Api Key
 const omdbAPIKey = "36562f82"; 

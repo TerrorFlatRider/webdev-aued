@@ -1,3 +1,7 @@
+//Author: Athanasios Goulas
+//Project: Final Assignment
+//Course: AUEB Web Developer
+
 //OMDB Api Key
 const omdbAPIKey = "36562f82"; 
 
@@ -164,14 +168,55 @@ function loadMenuIcons(){
 
     let menuIconsBtnSearch = document.createElement('button');
     let menuIconsBtnSearchI = document.createElement('i');
-    menuIconsBtnSearchI.setAttribute('class','fa-solid fa-magnifying-glass');
+    menuIconsBtnSearchI.setAttribute('class','fa-solid fa-magnifying-glass btn-search');
     menuIconsBtnSearchI.setAttribute('id','btn-search');
+
+    //CSS menuIconsBtnSearch
+    menuIconsBtnSearch.style.backgroundColor='black';
+    menuIconsBtnSearch.style.border='0px';
+    menuIconsBtnSearch.style.padding='10px';
+    menuIconsBtnSearch.style.display='block';
+    menuIconsBtnSearch.style.color='white';
+    menuIconsBtnSearch.style.float='right';
+
+    //CSS menuIconsBtnSearchI
+    menuIconsBtnSearchI.style.color = 'white';
+    menuIconsBtnSearchI.style.fontSize ='1rem';
+
+    menuIconsBtnSearchI.onmouseover = function(){
+        menuIconsBtnSearchI.style.color = '#FF0000';
+    }
+    menuIconsBtnSearchI.onmouseleave = function(){
+        menuIconsBtnSearchI.style.color = 'white';
+    }
+   
     menuIconsBtnSearch.appendChild(menuIconsBtnSearchI);
+    
 
     let menuIconsBtnToggle = document.createElement('button');
     let menuIconsBtnToggleI = document.createElement('i');
-    menuIconsBtnToggleI.setAttribute('class','fa-solid fa-bars');
+    menuIconsBtnToggleI.setAttribute('class','fa-solid fa-bars btn-menu-toggle');
     menuIconsBtnToggleI.setAttribute('id','btn-menu-toggle');
+
+    //CSS menuIconsBtnToggle
+    menuIconsBtnToggle.style.backgroundColor='black';
+    menuIconsBtnToggle.style.border='0px';
+    menuIconsBtnToggle.style.padding='10px';
+    menuIconsBtnToggle.style.display='block';
+    menuIconsBtnToggle.style.color='white';
+    menuIconsBtnToggle.style.float='right';
+
+    //CSS menuIconsBtnToggleI
+    menuIconsBtnToggleI.style.color = 'white';
+    menuIconsBtnToggleI.style.fontSize ='1rem';
+
+    menuIconsBtnToggleI.onmouseover = function(){
+        menuIconsBtnToggleI.style.color = '#FF0000';
+    }
+    menuIconsBtnToggleI.onmouseleave = function(){
+        menuIconsBtnToggleI.style.color = 'white';
+    }
+
     menuIconsBtnToggle.appendChild(menuIconsBtnToggleI);
 
     menuIcons.appendChild(menuIconsBtnSearch);
@@ -202,23 +247,23 @@ function loadFooter(){
     social.setAttribute('class','social');
 
     let innerSocialDiv = document.createElement('div');
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-square-facebook'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-instagram'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-linkedin'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-github'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-youtube'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-twitter'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-stack-overflow'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-vimeo'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-google-play'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-solid fa-code'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-500px'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-flickr'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-square-tumblr'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-soundcloud'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-deviantart'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-pinterest'));
-    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-vk'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-square-facebook','https://www.facebook.com'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-instagram','https://www.instagram.com'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-linkedin','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-github','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-youtube','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-twitter','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-stack-overflow','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-vimeo','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-google-play','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-solid fa-code','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-500px','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-flickr','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-square-tumblr','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-soundcloud','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-deviantart','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-pinterest','#'));
+    innerSocialDiv.appendChild(createSocialIcon('fa-brands fa-vk','#'));
 
     social.appendChild(innerSocialDiv);
 
@@ -226,7 +271,11 @@ function loadFooter(){
 
     let copyright = document.createElement('div');
     copyright.setAttribute('class','copyright');
-    copyright.innerHTML = '<p>Copyright © 2017 - 2025 TerrorFlatRider All Rights Reserved.</p>';
+
+    let curDate = new Date();
+    let curYear = curDate.getFullYear();
+    
+    copyright.innerHTML = `<p>Copyright © 2017 - ${curYear} TerrorFlatRider All Rights Reserved.</p>`;
 
     footer.appendChild(copyright);
 
@@ -260,11 +309,18 @@ function loadFooter(){
     </div>*/
 }
 
-function createSocialIcon(className){
+function createSocialIcon(className,url){
+
+    let socialAnchor = document.createElement('a');
+    socialAnchor.setAttribute('href',url);
+    socialAnchor.setAttribute('target','_blank');
 
     let socialIcon = document.createElement('i');
     socialIcon.setAttribute('class',className );
-    return socialIcon;
+
+    socialAnchor.appendChild(socialIcon);
+
+    return socialAnchor;
 
 }
 
@@ -307,11 +363,11 @@ function loadPosters(){
 
         postersSection.appendChild(postersDiv);
 
-        fetchFromOmdbApi("wicked");
+        fetchFromOmdbApi("saving private ryan");
         fetchFromOmdbApi("a star is born");
         fetchFromOmdbApi("black hawk down");
         fetchFromOmdbApi("la la land");
-        fetchFromOmdbApi("dune");
+        fetchFromOmdbApi("dune: part one");
 
     }catch (e){
         console.log(e);

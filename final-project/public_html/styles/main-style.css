@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Quicksand:wght@300..700&family=Roboto+Slab:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 /*Helper Border for Alignment Start*/
-/* 
+/*
 *{
     border: 1px#a50505 solid;
 }
@@ -51,6 +51,7 @@ p, span, a{
     /*Sticky Header*/
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 /*Logo Start*/
@@ -146,6 +147,7 @@ p, span, a{
     display:block;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.774);
+    margin-top: -20px;
     padding: 10px;
     width: 100px;
     top: 60px;
@@ -364,7 +366,6 @@ p, span, a{
 /*Services Section Styling End*/
 
 /*Posters Section Styling Start*/
-
 @media only screen and (max-width:576px){
     .posters-section{
         display: flex;
@@ -472,13 +473,13 @@ p, span, a{
     padding-bottom: 20px;
 }
 
-.social > div > i{
+.social > div > a > i{
     color: #FFFFFF;
     padding: 6px;
     font-size: 1.5rem;
 }
 
-.social > div > i:hover{
+.social > div > a> i:hover{
     color:#ff6f6f;
     scale: 1.2;
     transition: 1.5ms;
